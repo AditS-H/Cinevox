@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow-color: rgb(255, 187, 15);
+    --primary-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --card-background: #fff;
+    --card-border-color: #ddd;
+    --poppins : "Poppins", sans-serif;
+}
+
+
+body{
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#cover-block {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    animation: goOpacityZero 0.5s ease-out 2.3s forwards;
+}
+#cover-text-holder {
+    display: flex;
+    font-family: var(--primary-font);
+    font-size: 3rem;
+}
+#first-cover-block-txt {
+    color: var(--yellow-color);
+    margin-right: 0.1rem;
+    animation: goWhite 1s ease-in 0.5s forwards;
+}
+#second-cover-block-txt {
+    color: #fff;
+    animation: goYellow 1s ease-in 0.5s forwards;
+}
+
+@keyframes goWhite {
+    0%{
+        color: var(--yellow-color);
+    }
+    100%{
+        color: #fff;
+    }
+}
+@keyframes goYellow {
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: var(--yellow-color);
+    }
+}
+@keyframes goOpacityZero {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+nav {
+    position: static;
+    top: 0;
+    width: 100%;
+    padding: 0.4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+}
+/* #navbar */
+#logo{
+    font-size: 2rem;
+    font-family: var(--primary-font);
+    color: #fff;
+    width: 10rem;
+}
+
+.yellow-txt {
+    color: var(--yellow-color);
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+#nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    color: #fff;
+    margin-left: 2rem;
+}
+#nav-left a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid var(--yellow-color);
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    width: ;
+    transition: all 0.3s linear;
+}
+#nav-left a:hover{
+    background: var(--yellow-color);
+    font-weight: 700;
+    color: black;
+}
+
+#nav-right {
+    /* border: 2px solid lime; */
+    position: relative;
+    min-height: 3rem;
+    width: 15rem;
+}
+#nav-right input{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0.5rem 1rem;
+    color: rgb(220, 220, 220);
+    border-radius: 1rem;
+    outline: none;
+    border: 2px solid white;
+    background: #fff;
+}
+#nav-right img{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 1.6rem;
+    left: 75%;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: black;
+    color: #f0f0f0;
+    z-index: 1;
+}
+
+.main h1 {
+    font-size: 3em;
+    z-index: 2;
+    position: relative;
+}
+
+.main .yellow-txt {
+    color: #FFD700; /* Whitish-yellow color */
+}
+
+.main .tag-line {
+    font-size: 1.5em;
+    z-index: 2;
+    position: relative;
+}
+
+.main .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./imgs/slide1.jpg') center center/cover no-repeat;
+    z-index: 0;
+    animation: slideshow 30s infinite;
+}
+
+@keyframes slideshow {
+    0% { background-image: url('./imgs/slide1.jpg'); }
+    16.6% { background-image: url('./imgs/slide2.jpg'); }
+    33.2% { background-image: url('./imgs/slide3.jpg'); }
+    49.8% { background-image: url('./imgs/slide4.jpg'); }
+    66.4% { background-image: url('./imgs/slide5.jpg'); }
+    83% { background-image: url('./imgs/slide6.jpg'); }
+    100% { background-image: url('./imgs/slide1.jpg'); }
+}
+
+.section{
+    padding-top: 5rem;
+    background-color: black;
+}
+.section h1{
+    margin: auto;
+    color: #fff;
+    font-family: var(--poppins);
+    text-align: center;
+    padding-bottom: 1.3rem;
+    border-bottom: 2px solid salmon;
+    width: 25%;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: black;
+}
+.card-set {
+    position: relative;
+    /* border: 2px solid salmon; */
+    height: 40rem;
+    width: 90%;
+    color: white;
+}
+
+.card {    
+    position: absolute;
+    width: 55%;
+    height: 30rem;
+    /* border: 2px solid lime; */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    background-repeat: no-repeat;
+}
+.card-set .left {
+    top: 10%;
+    padding-right: 15rem;
+    left: 0;
+}
+.card-set .right {
+    top: 20%;
+    padding-right: 7rem;
+    right: 0;
+}
+
+.card:nth-child(1) {
+    background-image: url('./imgs/slide10.jpg');
+}
+
+.card:nth-child(2) {
+    background-image: url('slide11.jpg');
+}
+
+.card:nth-child(3) {
+    background-image: url('slide11.jpg');
+}
+
+.card:nth-child(4) {
+    background-image: url('slide9.jpg');
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.type {
+    font-family: var(--primary-font);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.7rem;
+    position: relative;
+    z-index: 4;
+}
+
+p {
+    font-family: var(--poppins);
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-bottom: 3rem;
+    position: relative;
+    font-style: italic;
+    z-index: 4;
+}
+
+a {
+    font-family: var(--poppins);
+    color: var(--yellow-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+    z-index: 4;
+}
+
+a:hover {
+    color: white;
+}
+
+.form-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px 80px;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    z-index: 8;
+}
+
+.jc{
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+}
+.smalll {
+    font-size: 15px; /* You can adjust this size as needed */
+    color: #333; /* Optional: You can change the text color if you want */
+    font-weight: normal; /* Optional: You can adjust the weight to normal, bold, etc. */
+    margin-bottom: 7px;
+    text-align: left;
+}
+label{
+    float: left;
+
+}
+.form-overlay input{
+    float: right;
+}
+.wrap
+{
+    width: 110px;
+    height: 140px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    margin-left: 0%;
+    align-items: flex-start;
+}
+.form-overlay1
+{
+position: absolute;
+top:50%;
+left: 50%;
+height: 300px;
+transform: translate(-50%, -50%);
+background-color: rgba(255, 255, 255, 0.8);
+padding: 30px 80px;
+border-radius: 30px;
+color: rgb(0, 0, 0);
+z-index: 8;
+}
+.jc1
+{
+    font-style: italic;
+color: black;
+margin-bottom: 48px;
+margin-left:0px ;
+padding-left: 00px;
+padding-right: 90px;
+}
+#name1
+{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+#email1
+{
+    font-size: 25px;
+}
+.n1
+{
+font-size: 30px;
+}
+.e1
+{
+font-size: 30px;
+}
+.submit_register
+{
+    font-size: 20px;
+}
